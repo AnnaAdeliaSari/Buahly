@@ -1,61 +1,138 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**SISTEM JUAL-BELI HASIL PERTANIAN BUAH** 🍎🍊🍌
+
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  Anna Adelia Sari <br>
+  D0222349<br>
+  <br>
+  Framework Web Based <br>
+  <br>
+  2025 
 </p>
 
-## About Laravel
+## Role dan Fitur-fiturnya
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Admin
+- Login sebagai admin  
+- Mengelola data Pengguna (petani dan pembeli)  
+  - Lihat daftar pengguna  
+  - Edit / Hapus pengguna  
+  - Atur peran role pengguna  
+- Mengelola data Produk (buah-buahan yang dijual)  
+  - Lihat semua produk buah  
+  - Edit / Hapus produk jika tidak sesuai  
+- Melihat Transaksi atau pesanan  
+  - Lihat semua transaksi: produk, pembeli, total harga, status  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Petani
+- Login sebagai petani/penjual  
+- Menambahkan data produk buah  
+  - Nama, Harga, Stok, Foto, Deskripsi  
+- Mengupdate data produk jika ada perubahan  
+  - Ubah harga, stok, atau deskripsi produk  
+- Mengelola pesanan  
+  - Konfirmasi pesanan  
+  - Update status pengiriman (dikemas, dikirim, selesai)  
+- Melihat riwayat penjualan  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Pembeli
+- Login sebagai pembeli  
+- Melihat dan Membeli Buah  
+- Melihat Riwayat Pembelian  
+- Memberi Ulasan / Reting buah yang dibeli  
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tabel-tabel database beserta field dan tipe datanya
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Tabel User
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Nama field   | Tipe data    | Keterangan                            |
+|--------------|--------------|----------------------------------------|
+| id           | INT (PK)     | Primary key/ID unik pengguna          |
+| name         | VARCHAR(100) | Nama pengguna                         |
+| email        | VARCHAR(50)  | Email login                           |
+| password     | VARCHAR(25)  | Kata sandi pengguna                   |
+| role         | ENUM         | Peran pengguna (‘admin’,’petani’,’pembeli’) |
+| created_at   | TIMESTAMP    | waktu dibuat                          |
+| update_at    | TIMESTAMP    | waktu diubah                          |
 
-## Laravel Sponsors
+### Tabel Products
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Nama field   | Tipe data     | Keterangan                                  |
+|--------------|---------------|----------------------------------------------|
+| id           | INT (PK)      | Primary key/ID unik produk                  |
+| user_id      | INT           | ID petani yang menambahkan produk (relasi ke user.id) |
+| name         | VARCHAR(100)  | Nama buah                                   |
+| description  | TEXT          | Deskripsi buah                              |
+| harga        | DECIMAL(10,2) | Harga buah                                  |
+| stok         | INT           | Stok buah tersedia                          |
+| image        | VARCHAR(255)  | URL/Path foto produk                        |
+| created_at   | TIMESTAMP     | waktu dibuat                                |
+| updated_at   | TIMESTAMP     | Waktu diubah                                |
 
-### Premium Partners
+### Tabel Orders
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+| Nama field   | Tipe data     | Keterangan                                  |
+|--------------|---------------|----------------------------------------------|
+| id           | INT (PK)      | Primary key/ID unik pesanan                 |
+| buyer_id     | INT           | ID pembeli (relasi ke users.id)            |
+| status       | ENUM          | Status pesanan ('Menunggu','dikemas','dikirim','selesai','dibatalkan') |
+| total_price  | DECIMAL(12,2) | Total harga semua produk dalam pesanan     |
+| created_at   | TIMESTAMP     | waktu pesanan dibuat                        |
+| update_at    | TIMESTAMP     | waktu pesanan diubah                        |
 
-## Contributing
+### Tabel Order_items
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Nama field   | Tipe data     | Keterangan                                |
+|--------------|---------------|--------------------------------------------|
+| id           | INT (PK)      | Primary key/ID item pesanan               |
+| order_id     | INT           | ID pesanan (relasi ke orders.id)          |
+| product_id   | INT           | ID produk (relasi ke products.id)         |
+| quantity     | INT           | Jumlah produk yang dibeli                 |
+| price        | DECIMAL(10,2) | Harga produk saat dibeli                  |
 
-## Code of Conduct
+### Tabel Reviews
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Nama field   | Tipe data     | Keterangan                                |
+|--------------|---------------|--------------------------------------------|
+| id           | INT (PK)      | Primary key/ID ulasan                     |
+| user_id      | INT           | ID pembeli (relasi ke users.id)          |
+| product_id   | INT           | ID produk (relasi ke products.id)        |
+| rating       | INT           | Nilai rating (1-5)                        |
+| comment      | TEXT          | Isi ulasan                                |
+| created_at   | TIMESTAMP     | Tanggal ulasan dibuat                     |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Jenis relasi dan tabel yang berelasi
 
-## License
+### Relasi antara users dan products
+- **Jenis Relasi**: One to Many (1:N)  
+- **Penjelasan**: Satu user (petani) bisa memiliki banyak produk, tetapi satu produk hanya dimiliki oleh satu petani.  
+- **Foreign key**: `products.user_id → users.id`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Relasi antara users dan orders
+- **Jenis relasi**: One-to-Many  
+- **Penjelasan**: Satu user (pembeli) bisa membuat banyak pesanan, tetapi satu pesanan hanya milik satu pembeli.  
+- **Foreign key**: `orders.buyer_id → users.id`
+
+### Relasi antara orders dan order_items
+- **Jenis relasi**: One-to-Many  
+- **Penjelasan**: Satu pesanan bisa memiliki banyak item pesanan, tetapi satu item hanya milik satu pesanan.  
+- **Foreign key**: `order_items.order_id → orders.id`
+
+### Relasi antara products dan order_items
+- **Jenis relasi**: One-to-Many  
+- **Penjelasan**: Satu produk bisa muncul di banyak item pesanan, tetapi satu item hanya mengacu ke satu produk.  
+- **Foreign key**: `order_items.product_id → products.id`
+
+### Relasi antara users dan reviews
+- **Jenis relasi**: One-to-Many  
+- **Penjelasan**: Satu user (pembeli) bisa memberikan banyak ulasan, tetapi satu ulasan hanya dibuat oleh satu user.  
+- **Foreign key**: `reviews.user_id → users.id`
+
+### Relasi antara products dan reviews
+- **Jenis relasi**: One-to-Many  
+- **Penjelasan**: Satu produk bisa memiliki banyak ulasan, tetapi satu ulasan hanya untuk satu produk.  
+- **Foreign key**: `reviews.product_id → products.id`
