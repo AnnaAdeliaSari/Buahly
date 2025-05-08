@@ -18,7 +18,7 @@
 
 ---
 **👥 Role & Fitur**
-
+##
 **👨‍💼 Admin**
 - Login sebagai admin  
 - Mengelola data Pengguna (petani dan pembeli)  
@@ -51,7 +51,7 @@
 ---
 
 **🧱 Tabel-tabel database beserta field dan tipe datanya**
-
+##
 ### Tabel User
 
 | Nama field   | Tipe data    | Keterangan                            |
@@ -113,7 +113,7 @@
 ---
 
 **🔗Jenis relasi dan tabel yang berelasi**
-
+##
 ### Relasi antara users dan products
 - **Jenis Relasi**: One to Many (1:N)  
 - **Penjelasan**: Satu user (petani) bisa memiliki banyak produk, tetapi satu produk hanya dimiliki oleh satu petani.  
