@@ -1,15 +1,15 @@
 **SISTEM JUAL-BELI HASIL PERTANIAN BUAH** 🍎🍊🍌
-![alt text]
-(https://github.com/AnnaAdeliaSari/Buahly/blob/main/Logo%20UNSULBAR.png?raw=true)
+<div align="center">
+![alt text](https://github.com/AnnaAdeliaSari/Buahly/blob/main/Logo%20UNSULBAR.png?raw=true)
 
-<p align="center">
-  Anna Adelia Sari <br>
-  D0222349<br>
-  <br>
-  Framework Web Based <br>
-  <br>
-  2025 
-</p>
+<br><br>
+
+<strong>Aulia Adelia Sari</strong><br>
+<strong>D0222349</strong><br>
+<strong>Framework Web Based</strong><br>
+<strong>2025</strong>
+
+</div>
 
 ## Role dan Fitur-fiturnya
 
