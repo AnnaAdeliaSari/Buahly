@@ -1,6 +1,7 @@
 **SISTEM JUAL-BELI HASIL PERTANIAN BUAH** 🍎🍊🍌
 <div align="center">
-![alt text](https://github.com/AnnaAdeliaSari/Buahly/blob/main/Logo%20UNSULBAR.png?raw=true)
+
+
 
 <br><br>
 
