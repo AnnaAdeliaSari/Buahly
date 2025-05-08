@@ -1,5 +1,5 @@
 <div align="center">
-**SISTEM JUAL-BELI HASIL PERTANIAN BUAH** 🍎🍊🍌
+<h1>SISTEM JUAL-BELI HASIL PERTANIAN BUAH 🍎🍊🍌</h1>
 
 
 
@@ -16,9 +16,10 @@
 
 </div>
 
-👥 Role & Fitur
+---
+**👥 Role & Fitur**
 
-👨‍💼 Admin
+**👨‍💼 Admin**
 - Login sebagai admin  
 - Mengelola data Pengguna (petani dan pembeli)  
   - Lihat daftar pengguna  
@@ -30,7 +31,7 @@
 - Melihat Transaksi atau pesanan  
   - Lihat semua transaksi: produk, pembeli, total harga, status  
 
-👨‍🌾 Petani
+**👨‍🌾 Petani**
 - Login sebagai petani/penjual  
 - Menambahkan data produk buah  
   - Nama, Harga, Stok, Foto, Deskripsi  
@@ -41,7 +42,7 @@
   - Update status pengiriman (dikemas, dikirim, selesai)  
 - Melihat riwayat penjualan  
 
-👨‍💼 Pembeli
+**👨‍💼 Pembeli**
 - Login sebagai pembeli  
 - Melihat dan Membeli Buah  
 - Melihat Riwayat Pembelian  
@@ -49,7 +50,7 @@
 
 ---
 
-🧱 Tabel-tabel database beserta field dan tipe datanya
+**🧱 Tabel-tabel database beserta field dan tipe datanya**
 
 ### Tabel User
 
@@ -111,7 +112,7 @@
 
 ---
 
-🔗Jenis relasi dan tabel yang berelasi
+**🔗Jenis relasi dan tabel yang berelasi**
 
 ### Relasi antara users dan products
 - **Jenis Relasi**: One to Many (1:N)  
