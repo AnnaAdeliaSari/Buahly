@@ -5,7 +5,7 @@
 
 <br><br>
 
-<strong>Aulia Adelia Sari</strong><br>
+<strong>Anna Adelia Sari</strong><br>
 <strong>D0222349</strong><br>
 <strong>Framework Web Based</strong><br>
 <strong>2025</strong>
