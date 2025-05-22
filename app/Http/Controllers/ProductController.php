@@ -24,5 +24,10 @@ class ProductController extends Controller
     return view('produk.index', compact('products'));
 }
 
+ // Method untuk menampilkan halaman login
+    public function login()
+    {
+        return view(''); // atau ganti dengan view lain seperti 'auth.login' jika tersedia
+    }
 
 }

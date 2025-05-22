@@ -12,7 +12,6 @@
             <option value="Jeruk" {{ request('kategori') == 'Jeruk' ? 'selected' : '' }}>Jeruk</option>
             <option value="Mangga" {{ request('kategori') == 'Mangga' ? 'selected' : '' }}>Mangga</option>
             <option value="Apel" {{ request('kategori') == 'Apel' ? 'selected' : '' }}>Apel</option>
-            <!-- tambahkan kategori lainnya -->
         </select>
         <button class="btn btn-success">Cari</button>
     </form>
@@ -22,19 +21,26 @@
     @forelse ($products as $product)
     <div class="col-md-4 mb-4">
         <div class="card shadow-sm h-100 border-0">
+            {{-- Gambar Produk --}}
+            <img src="{{ asset('images/' . $product->name . '.jpg') }}" class="card-img-top" alt="{{ $product->name }}" style="height: 200px; object-fit: cover;">
+
             <div class="card-body">
                 <h5 class="card-title text-success">{{ $product->name }}</h5>
                 <p class="text-muted">{{ $product->description }}</p>
                 <p><strong>Harga:</strong> Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                 <p><strong>Stok:</strong> {{ $product->stok }}</p>
 
+                {{-- Tombol Beli --}}
+                <a href="{{ url('/pesan/' . $product->id) }}" class="btn btn-sm btn-primary mb-2">Beli Sekarang</a>
+
+                {{-- Tombol Edit & Hapus (khusus admin/petani) --}}
                 @if(auth()->check() && in_array(auth()->user()->role, ['admin', 'petani']))
-                <a href="{{ url('/produk/'.$product->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                <form action="{{ url('/produk/'.$product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus produk ini?')">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </form>
+                    <a href="{{ url('/produk/'.$product->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ url('/produk/'.$product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus produk ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm btn-danger">Hapus</button>
+                    </form>
                 @endif
             </div>
         </div>

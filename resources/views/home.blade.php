@@ -12,25 +12,30 @@
     <div class="row text-center mt-5">
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
+                <img src="{{ asset('build/assets/mangga1.jpg') }}" class="card-img-top" alt="Mangga">
                 <div class="card-body">
-                    <h5 class="card-title text-success">🍎 Buah Segar</h5>
-                    <p class="card-text">Dapatkan buah berkualitas terbaik yang dipetik langsung dari kebun.</p>
+                    <h5 class="card-title text-success">🍋 Mangga Harum Manis</h5>
+                    <p class="card-text">Dapatkan mangga harum manis yang dipetik langsung dari kebun petani.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
+                <img src="{{ asset('build/assets/jeruk.jpg') }}" class="card-img-top" alt="Jeruk">
                 <div class="card-body">
-                    <h5 class="card-title text-success">🚚 Pengiriman Cepat</h5>
-                    <p class="card-text">Pengiriman aman dan cepat langsung ke alamat pelanggan.</p>
+                    <h5 class="card-title text-success">🍊 Jeruk Manis Lokal</h5>
+                    <p class="card-text">Jeruk manis dan segar, kaya vitamin C dan rasa alami.</p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
+                <img src="{{ asset('build/assets/apel.jpg') }}" class="card-img-top" alt="Apel">
                 <div class="card-body">
-                    <h5 class="card-title text-success">🤝 Dukungan Petani</h5>
-                    <p class="card-text">Setiap pembelian mendukung petani lokal dan pertanian berkelanjutan.</p>
+                    <h5 class="card-title text-success">🍎 Apel Fuji</h5>
+                    <p class="card-text">Apel fuji renyah dan manis, cocok dinikmati kapan saja.</p>
                 </div>
             </div>
         </div>
