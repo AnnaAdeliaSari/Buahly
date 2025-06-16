@@ -46,7 +46,7 @@ class Seeder_JualBuah extends Seeder
         $petaniId = DB::table('user')->where('role', 'petani')->value('id');
         $pembeliId = DB::table('user')->where('role', 'pembeli')->value('id');
 
-         // Insert product (oleh petani)
+        // Insert products
         DB::table('products')->insert([
             [
                 'user_id' => $petaniId,
@@ -54,15 +54,17 @@ class Seeder_JualBuah extends Seeder
                 'description' => 'Mangga segar langsung dari kebun.',
                 'harga' => 15000,
                 'stok' => 50,
+                'image' => 'mangga.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-             [
+            [
                 'user_id' => $petaniId,
                 'name' => 'Jeruk Manis',
                 'description' => 'Jeruk lokal manis dan segar.',
                 'harga' => 12000,
                 'stok' => 80,
+                'image' => 'jeruk.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -72,6 +74,7 @@ class Seeder_JualBuah extends Seeder
                 'description' => 'Apel fuji dari Malang yang renyah dan manis.',
                 'harga' => 18000,
                 'stok' => 60,
+                'image' => 'apel.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -81,6 +84,7 @@ class Seeder_JualBuah extends Seeder
                 'description' => 'Pisang raja matang siap santap.',
                 'harga' => 10000,
                 'stok' => 100,
+                'image' => 'pisang.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -90,14 +94,15 @@ class Seeder_JualBuah extends Seeder
                 'description' => 'Pepaya manis, kaya serat dan vitamin C.',
                 'harga' => 13000,
                 'stok' => 70,
+                'image' => 'pepaya.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
         ]);
 
+        // Insert order
         $productId = DB::table('products')->first()->id;
 
-        // Insert order (oleh pembeli)
         DB::table('orders')->insert([
             'buyer_id' => $pembeliId,
             'product_id' => $productId,

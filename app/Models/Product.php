@@ -18,6 +18,7 @@ class Product extends Model
         'description',
         'harga',
         'stok',
+        'image',
     ];
 
     // Relasi: Produk dimiliki oleh seorang petani (user)
