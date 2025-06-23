@@ -10,7 +10,6 @@
                 <th>#</th>
                 <th>Nama Pembeli</th>
                 <th>Produk</th>
-                <th>Jumlah</th>
                 <th>Total Harga</th>
                 <th>Status</th>
                 <th>Aksi</th>
@@ -21,9 +20,11 @@
             <tr>
                 <td>{{ $i + 1 }}</td>
                 <td>{{ $order->user->name ?? 'Tidak diketahui' }}</td>
-                <td>{{ $order->product->nama ?? 'Produk tidak ditemukan' }}</td>
-                <td>{{ $order->jumlah }}</td>
-                <td>Rp{{ number_format($order->total_harga, 0, ',', '.') }}</td>
+                <td>{{ $order->product->name ?? 'Produk tidak ditemukan' }}</td>
+
+                {{-- Total harga langsung dari database --}}
+                <td>Rp{{ number_format($order->total_harga ?? 0, 0, ',', '.') }}</td>
+
                 <td>
                     <form action="{{ route('admin.orders.updateStatus', $order->id) }}" method="POST">
                         @csrf

@@ -29,7 +29,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <h4 class="text-center py-4">Admin Panel</h4>
+        <h4 class="text-center py-4">Admin</h4>
         <a href="{{ route('admin.dashboard') }}">Dashboard</a>
         <a href="{{ route('admin.users') }}">Pengguna</a>
         <a href="{{ route('admin.products') }}">Produk</a>

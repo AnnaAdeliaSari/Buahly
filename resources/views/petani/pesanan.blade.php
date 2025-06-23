@@ -16,7 +16,7 @@
         <table class="table table-bordered table-striped">
             <thead class="table-success">
                 <tr>
-                    <th>No</th>
+                    <th>No</th> 
                     <th>Produk</th>
                     <th>Pembeli</th>
                     <th>Total Harga</th>

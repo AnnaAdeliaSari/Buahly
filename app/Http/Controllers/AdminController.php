@@ -61,6 +61,8 @@ class AdminController extends Controller
         return back()->with('success', 'Pengguna dihapus.');
     }
 
+    
+
     public function products()
     {
         $this->checkAdmin();

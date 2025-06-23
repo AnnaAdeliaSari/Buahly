@@ -28,6 +28,16 @@
                         <input type="password" class="form-control" name="password" required>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Daftar Sebagai</label>
+                        <select name="role" class="form-select" required>
+                            <option value="" disabled selected>-- Pilih Role --</option>
+                            <option value="admin">Admin</option>
+                            <option value="petani">Petani / Penjual</option>
+                            <option value="pembeli">Pembeli</option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-success w-100">Daftar</button>
                 </form>
 

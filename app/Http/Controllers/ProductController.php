@@ -65,7 +65,7 @@ class ProductController extends Controller
             'stok' => $request->stok,
             'kategori' => $request->kategori,
             'image' => $imageName,
-            'user_id' => auth()->id(), // Pastikan ada kolom ini kalau perlu
+            'user_id' => auth()->id(), 
         ]);
 
         return redirect('/produk')->with('success', 'Produk berhasil ditambahkan.');

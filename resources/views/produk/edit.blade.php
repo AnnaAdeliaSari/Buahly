@@ -49,6 +49,17 @@
                         <input type="number" name="stok" class="form-control" value="{{ old('stok', $product->stok) }}" required>
                     </div>
 
+                    {{-- Kategori (Jenis Buah) --}}
+                    <div class="mb-3">
+                        <label for="kategori" class="form-label">Jenis Buah</label>
+                        <select name="kategori" class="form-control" required>
+                            <option value="">-- Pilih Jenis Buah --</option>
+                            <option value="mangga" {{ old('kategori', $product->kategori) == 'mangga' ? 'selected' : '' }}>Mangga</option>
+                            <option value="apel" {{ old('kategori', $product->kategori) == 'apel' ? 'selected' : '' }}>Apel</option>
+                            <option value="jeruk" {{ old('kategori', $product->kategori) == 'jeruk' ? 'selected' : '' }}>Jeruk</option>
+                        </select>
+                    </div>
+
                     {{-- Gambar --}}
                     <div class="mb-3">
                         <label for="image" class="form-label">Gambar Produk (opsional)</label>

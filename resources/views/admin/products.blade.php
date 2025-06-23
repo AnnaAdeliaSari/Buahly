@@ -19,7 +19,7 @@
             @foreach($products as $i => $product)
             <tr>
                 <td>{{ $i + 1 }}</td>
-                <td>{{ $product->nama }}</td>
+                <td>{{ $product->name }}</td>
                 <td>Rp{{ number_format($product->harga, 0, ',', '.') }}</td>
                 <td>{{ $product->stok }}</td>
                 <td>{{ $product->user->name ?? 'Tidak diketahui' }}</td>
